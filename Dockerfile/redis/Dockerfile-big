@@ -1,6 +1,7 @@
 FROM alpine:3.10
 RUN mkdir /usr/local/redis
 RUN wget -O redis.tar.gz http://download.redis.io/releases/redis-4.0.14.tar.gz
-RUN rm -rf /usr/local/redis
+RUN tar xf redis.tar.gz -C /usr/local/redis --strip-components=1
+RUN rm -rf redis.tar.gz
 RUN apk add git
 
