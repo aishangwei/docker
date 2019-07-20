@@ -1,23 +1,23 @@
 version: "3.5"
 services:
   web:
-    image: fundamentalsofdocker/ch08-web:1.0
+    image: aishangwei/asw-js-web-demo:0.1
     networks:
-      - pets-net
+      - js-demo-net
     ports:
       - 3000:3000
     deploy:
       replicas: 3
   db:
-    image: fundamentalsofdocker/ch08-db:1.0
+    image: aishangwei/asw-js-db-demo:0.1
     networks:
       - pets-net
     volumes:
-      - pets-data:/var/lib/postgresql/data
+      - asw-js-db-data:/var/lib/postgresql/data
 
 volumes:
-  pets-data:
+  asw-js-db-data:
 
 networks:
-  pets-net:
+  js-demo-net:
     driver: overlay
