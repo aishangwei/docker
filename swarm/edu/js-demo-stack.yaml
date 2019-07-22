@@ -11,12 +11,12 @@ services:
   db:
     image: aishangwei/asw-js-db-demo:0.1
     networks:
-      - pets-net
+      - js-demo-net
     volumes:
-      - asw-js-db-data:/var/lib/postgresql/data
+      - js-db-data:/var/lib/postgresql/data
 
 volumes:
-  asw-js-db-data:
+  js-db-data:
 
 networks:
   js-demo-net:
